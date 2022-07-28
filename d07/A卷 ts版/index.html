@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" onkeyup="sou(this)" placeholder="请输入名称">
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    编号
+                    <button onclick="pxid(this)">倒序</button>
+                </th>
+                <th>
+                    商品名称
+                </th>
+                <th>
+                    价格
+                    <button onclick="pxjg(this)">正序</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <p>每页 <input type="text" class="tiaoshu" value="10" onkeyup="anxr(this)">条，共 <span></span> 条</p>
+    <span>
+        <button>
+
+        </button>
+    </span>
+</body>
+
+<script src="./index.js"></script>
+
+</html>
+<style>
+    body {
+        text-align: center;
+        background-image: linear-gradient(90deg, #6d8e72, #45c15a);
+    }
+    
+    .tiaoshu {
+        width: 30px;
+    }
+    
+    table {
+        border: 8px solid rgb(5, 32, 1);
+        margin: auto;
+    }
+    
+    th {
+        /* border: 1px solid rgb(198, 109, 145); */
+        text-align: center;
+        padding: 5px 100px;
+    }
+    
+    td {
+        /* border: 1px solid rgb(198, 109, 145); */
+        text-align: center;
+    }
+</style>

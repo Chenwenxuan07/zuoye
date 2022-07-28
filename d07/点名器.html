@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(230, 217, 217);
+        }
+        .box{
+            width: 800px;
+            height: 500px;
+           
+            border-radius: 15px;
+            margin: auto;
+        }
+        li{
+            background: rgba(151, 54, 54, 0.5) ;
+            width: 130px;
+            height: 50px;
+            margin-top: 30px;
+            list-style: none;
+            float: left;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+            color:#fff;
+            border-radius: 10px;
+        }
+        button{
+            width: 150px;
+            height: 60px;
+            font-size: 25px;
+            border-radius: 10px;
+            color: #fff;
+            background: rgb(0, 255, 251);
+            border: none;
+            position: relative;
+            top:17px;
+            left:320px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>张三</li>
+        </ul>
+        <button>开始点名</button>
+    </div>
+    <script>
+        // 1.获取页面中所有的li标签
+        var li = document.getElementsByTagName('li');
+        console.log(li);
+        // 2.获取页面中的button按钮
+        var btn = document.getElementsByTagName('button')[0];
+        // console.log(btn);
+        //声明一个空数组用来存我们循环出来的下标
+        var b = [];
+        // 3.给我们的按钮设置一个点击事件
+        btn.onclick = function(){
+            // 4.延时调用
+            time = setInterval(function(){
+                // 9.按钮的禁用
+                btn.disabled = true;
+                btn.innerHTML = '按钮已禁用';//在按钮禁用的时候更该显示内容
+                btn.style.background = '#ccc';//在按钮禁用的时候更该背景颜色
+                // 5.循环我的页面中所有的li标签
+                for(var i = 0; i < li.length; i++){
+                    // 6.这里写一个随机循环的一个下标
+                    b = li[Math.floor(Math.random() * li.length)];
+                    //7.设置li色块的初始颜色值
+                    li[i].style.background = 'rgba(226, 203, 203, 0.5)';
+                }
+                // 8.设置随机出来的背景颜色
+                b.style.background = '#f45';
+            },200);
+             // 10.超时调用,5秒中之后结束我们本个延时调用的函数
+             setTimeout(function(){  
+                    // 11.解释延时调用
+                    clearInterval(time);
+                    // 12.解除按钮的禁用
+                    btn.disabled = false;
+                    btn.innerHTML = '开始点名';//在按钮解除禁用的时候更该显示内容
+                    btn.style.background = 'chartreuse';//在按钮解除禁用的时候更该背景颜色
+                    // 13.弹出框进行弹出
+                    alert(b.innerHTML);
+            },5000)
+        }
+    </script>
+</body>
+</html>
